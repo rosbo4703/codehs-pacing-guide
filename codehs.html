@@ -1,0 +1,303 @@
+function createCSFPacingPresentation() {
+  var deck = SlidesApp.create("TN Computer Science Foundations 18-Week Master Pacing Guide");
+  var slides = deck.getSlides();
+  
+  // ==========================================
+  // SLIDE 1: PREMIUM TITLE SLIDE (DARK THEME)
+  // ==========================================
+  var titleSlide = slides[0];
+  titleSlide.getBackground().setSolidFill("#0F172A"); // Deep Modern Slate Blue
+  
+  // Minimalist Teal Accent Bar
+  var accentBar = titleSlide.insertShape(SlidesApp.ShapeType.RECTANGLE, 50, 85, 80, 6);
+  accentBar.getFill().setSolidFill("#0D9488"); // Teal Accent
+  accentBar.getBorder().setTransparent();
+
+  var titleBox = titleSlide.insertShape(SlidesApp.ShapeType.TEXT_BOX, 50, 110, 620, 140);
+  var titleText = titleBox.getText();
+  titleText.setText("Tennessee Computer Science Foundations (CSF)\n18-Week Master Pacing Guide & Gap-Closing Blueprint");
+  var titleStyle = titleText.getTextStyle();
+  titleStyle.setFontSize(26);
+  titleStyle.setBold(true);
+  titleStyle.setForegroundColor("#FFFFFF");
+  titleStyle.setFontFamily("Arial");
+
+  var subBox = titleSlide.insertShape(SlidesApp.ShapeType.TEXT_BOX, 50, 265, 620, 80);
+  var subText = subBox.getText();
+  subText.setText("Optimized for a 4x4 Block Schedule\n(2-Credit Comprehensive Path Covering All 4 Focus Areas)");
+  var subStyle = subText.getTextStyle();
+  subStyle.setFontSize(14);
+  subStyle.setItalic(true);
+  subStyle.setForegroundColor("#94A3B8"); // Slate gray secondary text
+  subStyle.setFontFamily("Arial");
+
+  // ==========================================
+  // SLIDES 2 - 10: DESIGNER CONTENT GENERATION
+  // ==========================================
+  
+  // Slide 2
+  var text2 = "Setting Up Your Classroom for Success\n\n" +
+    "• The Pacing Demands: On a 4x4 block schedule, a standard 4-week CodeHS unit must be compressed into 2 weeks, requiring roughly 90 minutes of daily focus.\n" +
+    "• The Complete Scope: This framework tracks the comprehensive 2-credit implementation path, covering all 36 state standards across the core syllabus and all 4 Focus Areas.\n" +
+    "• The Platform Gaps: CodeHS provides an excellent browser-based ecosystem for coding syntax and theory, but it lacks mechanisms to generate the physical, local, and technical written artifacts mandated by the state of Tennessee.";
+  addStandardSlide(deck, "Course Architecture & The 4x4 Block Reality", text2);
+
+  // Slide 3
+  var text3 = "📅 Weekly Schedule\n" +
+    "• Week 1 (CodeHS Unit 1): History of Computers, Hardware vs. Software.\n" +
+    "• Week 2 (CodeHS Unit 1): Operating Systems Intro, Future of Computing & AI.\n" +
+    "• Week 3 (CTSO Focus): Professional IT Societies and Leadership Intro.\n\n" +
+    "🎯 Standards Addressed\n" +
+    "• Core: 1.1 (Safety Rules), 1.2 (Safety Equipment), 3.1 (IT Occupations), 3.2 (Professional Societies), 3.3 (CTSO Intro).\n" +
+    "• Focus (Networking & Web): 5.1 (OS Evolution), 6.2 (Hardware Components).\n\n" +
+    "🛠️ CodeHS Gaps & Lesson Ideas\n" +
+    "• The Gap: CodeHS treats hardware conceptually. TN requires active safety demonstrations, an occupational table, and an interactive CTSO activity.\n" +
+    "• Lesson Idea: Establish a 'Hardware Autopsy' day where students safely open a decommissioned desktop chassis to physically identify internal parts.\n\n" +
+    "🌐 Interactive Tech Sources & Resources\n" +
+    "• SkillsUSA Absorb Platform: Access classroom competition templates to fulfill standard 3.3. (Link: https://www.skillsusa.org)\n" +
+    "• OSHA Laboratory Safety Guidelines: Deploy quick-print safety checklists for standard 1.1. (Link: https://www.osha.gov)";
+  addStandardSlide(deck, "Weeks 1–3 | Orientation, Hardware, & CTSO Integration", text3);
+
+  // Slide 4
+  var text4 = "📅 Weekly Schedule\n" +
+    "• Week 4 (CodeHS Unit 2): Lab Safety, Circuits, Ohm's Law, & Multimeters.\n" +
+    "• Week 5 (CodeHS Unit 2): Logical AND, OR, and NOT Gates.\n\n" +
+    "🎯 Standards Addressed\n" +
+    "• Core: 1.1 (Electrical Safety), 1.2 (Safety Equipment).\n" +
+    "• Focus (Networking): 2.1 (Electrical Circuits), 2.2 (Circuit Behavior & Multimeters), 2.4 (Logic Gates).\n\n" +
+    "🛠️ CodeHS Gaps & Lesson Ideas\n" +
+    "• The Gap: CodeHS utilizes a flat 2D online circuit simulator. TN strictly requires testing real circuit behaviors using physical test equipment on typical computer systems.\n" +
+    "• Lesson Idea: Have students construct a truth table modeling a real-world machine, such as a car seatbelt warning light chime system.\n\n" +
+    "🌐 Interactive Tech Sources & Resources\n" +
+    "• Tinkercad Circuits: A robust tool to scaffold circuit behaviors before handing students physical hardware. (Link: https://www.tinkercad.com)\n" +
+    "• PhET Circuit Construction Kit: Free interactive simulation tool for modeling Ohm’s law equations in real time. (Link: https://phet.colorado.edu)";
+  addStandardSlide(deck, "Weeks 4–5 | Electronics, Circuits, & Logic", text4);
+
+  // Slide 5
+  var text5 = "📅 Weekly Schedule\n" +
+    "• Week 6 (CodeHS Unit 3): HTML Structure, Formatting Tags, & Hyperlinks.\n" +
+    "• Week 7 (CodeHS Unit 3): Web Images, CSS Styling, Copyright, & Fair Use.\n\n" +
+    "🎯 Standards Addressed\n" +
+    "• Core: 13.1 (Social, Legal, and Ethical Copyright Laws).\n" +
+    "• Focus (Web Design): 6.1 (Web Terminology), 7.1 (Keyboard Shortcuts), 12.1 (Web-Based Writing Styles).\n\n" +
+    "🛠️ CodeHS Gaps & Lesson Ideas\n" +
+    "• The Gap: CodeHS tracks code syntax but does not require students to maintain a running publication or build cross-platform comparative reference guides.\n" +
+    "• Lesson Idea: Launch a class blog. Students write weekly technical summaries, modeling professional writing styles appropriate for web publication.\n\n" +
+    "🌐 Interactive Tech Sources & Resources\n" +
+    "• Edublogs Platform: Set up secure, student-managed blogs to instantly satisfy web publication guidelines. (Link: https://edublogs.org)\n" +
+    "• Canva Education: Have students design a user-friendly Quick Reference Table comparing Windows vs. Mac OS text shortcuts side-by-side. (Link: https://www.canva.com)";
+  addStandardSlide(deck, "Weeks 6–7 | Web Architecture, Syntax, & Compliance", text5);
+
+  // Slide 6
+  var text6 = "📅 Weekly Schedule\n" +
+    "• Week 8 (CodeHS Unit 4): Project Brainstorming, Mind-Mapping, & Customer Surveys.\n" +
+    "• Week 9 (CodeHS Unit 4): Team Website Building & Milestone Timelines.\n\n" +
+    "🎯 Standards Addressed\n" +
+    "• Focus (Web Design): 9.1 (Web Design Process), 10.1 (Team Roles), 10.2 (Project Management Skills), 11.1 (Client Relations), 12.2 (CMS Website Creation).\n\n" +
+    "🛠️ CodeHS Gaps & Lesson Ideas\n" +
+    "• The Gap: CodeHS platforms build custom text file websites in isolation. TN mandates using a Content Management System (CMS) like WordPress and running mock client interviews.\n" +
+    "• Lesson Idea: Run a 'Web Agency Day' where students use a self-authored questionnaire to interview a peer acting as a mock business client.\n\n" +
+    "🌐 Interactive Tech Sources & Resources\n" +
+    "• WordPress.com for Education: Free ecosystem to teach software application downloads, directory roots, and asset folder storage. (Link: https://wordpress.com)\n" +
+    "• Lucidchart for Education: Collaborate to build an agreed-upon class web design flowchart or iterative logic model. (Link: https://www.lucidchart.com)";
+  addStandardSlide(deck, "Weeks 8–9 | Project Management & CMS Architecture", text6);
+
+  // Slide 7
+  var text7 = "📅 Weekly Schedule\n" +
+    "• Week 10 (CodeHS Unit 5): Binary & Hexadecimal Conversions, Compression Methods.\n" +
+    "• Week 11 (CodeHS Unit 6): Internet Evolution, IPv4 vs. IPv6, & DNS.\n" +
+    "• Week 12 (CodeHS Unit 6): Parallel Computing, Network Infrastructure, & Tech Ethics.\n\n" +
+    "🎯 Standards Addressed\n" +
+    "• Core: 4.1 (History of the Internet), 13.1 (Ethical Issues).\n" +
+    "• Focus (Networking & Cyber): 2.3 (Counting Systems), 6.1 (Web Terminology), 6.3 (Computer Networks & Client-Server Environments), 9.2 (Troubleshooting Process).\n\n" +
+    "🛠️ CodeHS Gaps & Lesson Ideas\n" +
+    "• The Gap: CodeHS focuses on code syntax over hardware layouts and documentation. TN requires students to log explicit 6-step troubleshooting workflows.\n" +
+    "• Lesson Idea: Disconnect a patch cable or alter IP settings on a sandbox machine; have students systematically log their process from user inquiry to final documentation.\n\n" +
+    "🌐 Interactive Tech Sources & Resources\n" +
+    "• Cisco Packet Tracer Desktop: Free visual simulation engine for designing a complete client-server infrastructure network map. (Link: https://www.netacad.com)\n" +
+    "• Code.org Data Widgets: Excellent widget tools for visually demonstrating binary pixel encoding and data compression mechanics. (Link: https://code.org)";
+  addStandardSlide(deck, "Weeks 10–12 | Data Infrastructure & Network Frameworks", text7);
+
+  // Slide 8
+  var text8 = "📅 Weekly Schedule\n" +
+    "• Week 13 (CodeHS Unit 7): History of Cloud, Deployment Models (Public, Private, Hybrid).\n" +
+    "• Week 14 (CodeHS Unit 7): Virtualization, Cloud Databases, & Internet of Things.\n\n" +
+    "🎯 Standards Addressed\n" +
+    "• Core Requirements: 8.1 (Cloud Milestones), 8.2 (Cloud Tech Roles), 8.3 (Deployment Models), 8.4 (Cloud Technologies Visuals), 8.5 (Internet of Things).\n\n" +
+    "🛠️ CodeHS Gaps & Lesson Ideas\n" +
+    "• The Gap: CodeHS provides videos and case-study exploration text. TN demands visual displays and written reports delineating roles (customer, provider, partner).\n" +
+    "• Lesson Idea: Students select a smart automated device (e.g., smart thermostat) and sketch an IoT pipeline tracking data from actuator to cloud database.\n\n" +
+    "🌐 Interactive Tech Sources & Resources\n" +
+    "• Google Cloud Skills Boost: Free micro-learning courses tailored to cloud deployment visualization. (Link: https://www.cloudskillsboost.google)\n" +
+    "• AWS Academy Starter: Cloud service educator resources detailing the traits of real cloud architectures. (Link: https://aws.amazon.com/education/aws-academy)";
+  addStandardSlide(deck, "Weeks 13–14 | The Cloud & Internet of Things (IoT)", text8);
+
+  // Slide 9
+  var text9 = "📅 Weekly Schedule\n" +
+    "• Week 15 (CodeHS Unit 8): The CIA Triad, Threat Maps, & Privacy Dilemmas.\n" +
+    "• Week 16 (CodeHS Unit 9): Data Science, Visualizations, & Statistical Efficiencies.\n\n" +
+    "🎯 Standards Addressed\n" +
+    "• Core Requirements: 8.6 (Database Metrics Short Paper).\n" +
+    "• Focus (Cybersecurity): 14.1 (CIA Fundamentals), 14.2 (Security Breaches & Website Protocols), 14.3 (Security Access Practices & Malware Defenses), 17.1 (Data Analysis in IT fields).\n\n" +
+    "🛠️ CodeHS Gaps & Lesson Ideas\n" +
+    "• The Gap: CodeHS checks concepts via multi-choice questionnaires. TN requires students to write an explanatory text evaluating enterprise security protocols and privacy vs. employer rights.\n" +
+    "• Lesson Idea: Conduct a structured Socratic seminar exploring whether employers possess the moral and legal right to monitor employee networks.\n\n" +
+    "🌐 Interactive Tech Sources & Resources\n" +
+    "• TryHackMe Rooms: Free gamified labs teaching access privilege configurations and CIA Triad breaches interactively. (Link: https://tryhackme.com)\n" +
+    "• Cyber.org: Free security curricula aligned directly to state standards offering templates for access control lists and BIOS defense instruction. (Link: https://cyber.org)";
+  addStandardSlide(deck, "Weeks 15–16 | Cybersecurity Defenses & Analytics", text9);
+
+  // Slide 10
+  var text10 = "📅 Weekly Schedule\n" +
+    "• Week 17 (CodeHS Unit 10): Multi-file Directories, Asset Structuring, Language Profiles, & SDLC.\n" +
+    "• Week 18 (CodeHS Unit 10): Command Line Interfaces, Shell Scripts, & Capstone Portfolios.\n\n" +
+    "🎯 Standards Addressed\n" +
+    "• Focus (Coding): 9.3 (Flowcharts for Programming), 15.1 (Digital File Management), 16.1 (Programming Languages), 16.2 (Software Development Life Cycle), 16.3 (Batch Files Logic).\n\n" +
+    "🛠️ CodeHS Gaps & Command Line Restrictions\n" +
+    "• The IT Constraint: School district devices almost always block local Command Prompt (cmd.exe) and PowerShell access for security. CodeHS relies on basic emulation.\n" +
+    "• The Workaround Lesson: Use secure, cloud-hosted or browser-based tools to write and test batch scripts without triggering local network infrastructure security alarms.\n\n" +
+    "🌐 Interactive Tech Sources & Workarounds (Standard 16.3)\n" +
+    "• Replit Bash Environment: Free browser-based container. Students can safely execute scripts natively in a secure cloud terminal environment without local machine rights. (Link: https://replit.com)\n" +
+    "• JS-DOS / PCjs Emulators: Run a fully simulated retro MS-DOS environment inside Chrome to write authentic .bat scripts safely. (Link: https://www.pcjs.org)";
+  addStandardSlide(deck, "Weeks 17–18 | Lifecycle Frameworks & Command Line Realities", text10);
+
+  // ==========================================
+  // SLIDE 11: EXECUTIVE RESOURCE MATRIX
+  // ==========================================
+  var matrixSlide = deck.appendSlide(SlidesApp.PredefinedLayout.BLANK);
+  matrixSlide.getBackground().setSolidFill("#F8FAFC");
+  
+  var matrixHead = matrixSlide.insertShape(SlidesApp.ShapeType.TEXT_BOX, 40, 15, 640, 45);
+  var mHeadText = matrixHead.getText();
+  mHeadText.setText("Interactive Resource Matrix: Quick-Launch Dashboard");
+  var mHeadStyle = mHeadText.getTextStyle();
+  mHeadStyle.setFontSize(20);
+  mHeadStyle.setBold(true);
+  mHeadStyle.setForegroundColor("#0F172A");
+  mHeadStyle.setFontFamily("Arial");
+  
+  var table = matrixSlide.insertTable(6, 4, 40, 65, 640, 250);
+  var headers = ["Focus Area", "Gaps to Address", "Integrated Tech Solution", "Action Link"];
+  
+  for (var i = 0; i < 4; i++) {
+    var cell = table.getCell(0, i);
+    cell.getFill().setSolidFill("#0F172A"); // Header Row Styling
+    var cellText = cell.getCellType === undefined ? cell.getText() : cell.getText();
+    cellText.setText(headers[i]);
+    var cellStyle = cellText.getTextStyle();
+    cellStyle.setBold(true);
+    cellStyle.setFontSize(11);
+    cellStyle.setForegroundColor("#FFFFFF");
+    cellStyle.setFontFamily("Arial");
+  }
+  
+  var rowData = [
+    ["All Pathways (Core)", "CTSO Leadership Context", "SkillsUSA Absorb Platform", "skillsusa.org"],
+    ["Networking Systems", "Physical Multimeter Testing", "PhET & Tinkercad", "tinkercad.com"],
+    ["Web Design", "CMS Site Building & Roots", "WordPress Sandbox", "wordpress.com"],
+    ["Cybersecurity", "Enterprise Breach Writing", "TryHackMe Modules", "tryhackme.com"],
+    ["Coding", "Safe Locked-Down Scripting", "Replit Bash Container", "replit.com"]
+  ];
+  
+  for (var row = 1; row <= 5; row++) {
+    for (var col = 0; col < 4; col++) {
+      var cell = table.getCell(row, col);
+      // Clean Alternating Zebra Stripe Fills
+      if (row % 2 === 0) {
+        cell.getFill().setSolidFill("#F1F5F9");
+      } else {
+        cell.getFill().setSolidFill("#FFFFFF");
+      }
+      var cellText = cell.getText();
+      cellText.setText(rowData[row-1][col]);
+      var cellStyle = cellText.getTextStyle();
+      cellStyle.setFontSize(10);
+      cellStyle.setForegroundColor("#334155");
+      cellStyle.setFontFamily("Arial");
+    }
+  }
+
+  // Modern Callout Shape for Teacher Quick-Tip
+  var tipBox = matrixSlide.insertShape(SlidesApp.ShapeType.ROUND_RECTANGLE, 40, 325, 640, 65);
+  tipBox.getFill().setSolidFill("#EFF6FF"); // Soft Blue tint background
+  tipBox.getBorder().getLineFill().setSolidFill("#BFDBFE");
+  tipBox.getBorder().setWeight(1);
+  
+  var tipText = tipBox.getText();
+  tipText.setText("Teacher Quick-Tip: Keep this dashboard pinned on your browser! When students finish their daily CodeHS modules early during the 90-minute block session, launch one of these sandbox links immediately as an extension to satisfy the state's required portfolio artifacts.");
+  var tipStyle = tipText.getTextStyle();
+  tipStyle.setFontSize(10);
+  tipStyle.setItalic(true);
+  tipStyle.setForegroundColor("#1E40AF"); // High contrast blue text
+  tipStyle.setFontFamily("Arial");
+
+  Logger.log("Presentation Created Successfully! URL: " + deck.getUrl());
+}
+
+// ==========================================
+// UPGRADED CUSTOM LAYOUT DESIGNER HELPER
+// ==========================================
+function addStandardSlide(deck, header, contentText) {
+  var newSlide = deck.appendSlide(SlidesApp.PredefinedLayout.BLANK);
+  newSlide.getBackground().setSolidFill("#F8FAFC"); // Clean UI subtle canvas color
+  
+  // 1. Sleek Top Header Bar
+  var headerBg = newSlide.insertShape(SlidesApp.ShapeType.RECTANGLE, 0, 0, 720, 65);
+  headerBg.getFill().setSolidFill("#0F172A"); // Modern Executive Deep Blue/Slate
+  headerBg.getBorder().setTransparent();
+  
+  // Header Text Layer
+  var headBox = newSlide.insertShape(SlidesApp.ShapeType.TEXT_BOX, 35, 12, 650, 45);
+  var headText = headBox.getText();
+  headText.setText(header);
+  var headStyle = headText.getTextStyle();
+  headStyle.setFontSize(18);
+  headStyle.setBold(true);
+  headStyle.setForegroundColor("#FFFFFF");
+  headStyle.setFontFamily("Arial");
+  
+  // 2. Dashboard Paper Container "Card"
+  var card = newSlide.insertShape(SlidesApp.ShapeType.ROUND_RECTANGLE, 30, 85, 660, 295);
+  card.getFill().setSolidFill("#FFFFFF"); // Crisp white card surface
+  card.getBorder().getLineFill().setSolidFill("#E2E8F0"); // Light gray border
+  card.getBorder().setWeight(1);
+  
+  // Body Text Layer Over Card
+  var bodyBox = newSlide.insertShape(SlidesApp.ShapeType.TEXT_BOX, 42, 92, 636, 280);
+  var bodyText = bodyBox.getText();
+  bodyText.setText(contentText);
+  
+  // Baseline Content Typography
+  var bodyStyle = bodyText.getTextStyle();
+  bodyStyle.setFontSize(11);
+  bodyStyle.setForegroundColor("#334155"); // Charcoal text for easy reading
+  bodyStyle.setFontFamily("Arial");
+  
+  // 3. Dynamic Typography Formatting (Semantic Scanning)
+  var sections = [
+    "📅 Weekly Schedule", 
+    "🎯 Standards Addressed", 
+    "🛠️ CodeHS Gaps & Lesson Ideas", 
+    "🛠️ CodeHS Gaps & Command Line Restrictions",
+    "🌐 Interactive Tech Sources & Resources", 
+    "🌐 Interactive Tech Sources & Workarounds (Standard 16.3)",
+    "Setting Up Your Classroom for Success",
+    "• The Pacing Demands:",
+    "• The Complete Scope:",
+    "• The Platform Gaps:"
+  ];
+  
+  sections.forEach(function(sec) {
+    var matches = bodyText.find(sec);
+    matches.forEach(function(range) {
+      var style = range.getTextStyle();
+      style.setBold(true);
+      style.setForegroundColor("#0F172A"); // High contrast bold headings
+      if (sec.indexOf("•") === -1) {
+        style.setFontSize(12); // Slightly elevate section headings sizes
+      }
+    });
+  });
+  
+  return newSlide;
+}
